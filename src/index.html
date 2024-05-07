@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <section class="content" id="content">
+        <div class="content__inner inner">
+          <div class="form-block">
+            <div class="form-block__head">
+              <h1 class="form-block__title roboto-medium">Онлайн-форма акта рекламации</h1>
+
+              <div class="form-block__description roboto-light">
+                <p>
+                  <span class="roboto-regular" style="color: #e31f23">ВНИМАНИЕ!</span> Перед заполнением формы
+                  ознакомьтесь с <a href="#">правилами подачи
+                    рекламационного акта</a> и <a href="#">условиями гарантийного ремонта.</a>
+                </p>
+
+                <p>
+                  Для вашего удобства мы создали подробную Инструкцию по заполнению онлайн-формы Акта рекламации, вы
+                  можете
+                  ознакомиться с ней перейдя <a href="#">по ссылке</a>.
+                </p>
+              </div>
+            </div>
+
+            <form id="online-form-comp" class="form">
+              <div id="block-dataBuy" class="form__block block-dataBuy">
+                <h2 class="form__block-title roboto-light">ДАННЫЕ ПО ПРОДАЖЕ</h2>
+
+                <div class="form__block-items">
+                  <div class="form__block-item">
+                    <span class="form__block-name roboto-light">№/дата документа покупки*</span>
+
+                    <label class="form__block-label">
+                      <input name="num-date-buy" class="form__block-input" type="text"
+                        placeholder="№/дата документа покупки" required>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div id="block-userData" class="form__block block-userData">
+                <h2 class="form__block-title roboto-light">ДАННЫЕ КОНТРАГЕНТА</h2>
+
+                <div class="form__block-items">
+                  <div class="form__block-item">
+                    <span class="form__block-name roboto-light">ИНН*</span>
+
+                    <label class="form__block-label">
+                      <input name="inn" class="form__block-input form__block-input--inn" type="text"
+                        placeholder="Номер ИНН" required>
+                    </label>
+                  </div>
+
+                  <div class="form__block-item">
+                    <span class="form__block-name roboto-light">Наименование организации*</span>
+
+                    <label class="form__block-label">
+                      <input name="nameCompany" class="form__block-input" type="text"
+                        placeholder="Наименование организации" required>
+                    </label>
+                  </div>
+
+                  <div class="form__block-item">
+                    <span class="form__block-name roboto-light">Адрес контрагента*</span>
+
+                    <label class="form__block-label">
+                      <input name="address" class="form__block-input" type="text" placeholder="Адрес контрагента"
+                        required>
+                    </label>
+                  </div>
+
+                  <div class="form__block-item">
+                    <span class="form__block-name roboto-light">Контактное лицо*</span>
+
+                    <label class="form__block-label">
+                      <input name="fio" class="form__block-input" type="text" placeholder="ФИО контактного лица"
+                        required>
+                    </label>
+                  </div>
+
+                  <div class="form__block-item">
+                    <span class="form__block-name roboto-light">
+                      Контактный телефон*
+                      <span id="tooltip-tel" class="form__block-info-i">
+                        <svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M8 0C3.5888 0 0 3.5888 0 8C0 12.4112 3.5888 16 8 16C12.4112 16 16 12.4112 16 8C16 3.5888 12.4112 0 8 0ZM8.8 12H7.2V7.2H8.8V12ZM8.8 5.6H7.2V4H8.8V5.6Z"
+                            fill="#e31f23"></path>
+                        </svg>
+                      </span>
+                    </span>
+
+                    <label class="form__block-label form__block-label--tel">
+                      <input name="phone" class="form__block-input phoneInput" type="tel"
+                        placeholder="+7 (___) ___ __ __" required>
+                    </label>
+                  </div>
+
+                  <div class="form__block-item">
+                    <span class="form__block-name roboto-light">E-mail*</span>
+
+                    <label class="form__block-label">
+                      <input name="email" class="form__block-input form__block-input-email" type="email"
+                        placeholder="Адрес электронной почты" required>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div id="block-delivery" class="form__block block-delivery">
+                <h2 class="form__block-title roboto-light">Способ возврата рекламационного оборудования​</h2>
+
+                <div class="form__block-items">
+                  <div class="form__block-item form__block-item--top">
+                    <span class="form__block-name form__block-name--mt  roboto-light">Способ возврата*</span>
+
+                    <ul class="form__block-list">
+                      <li class="form__block-list-item">
+                        <label class="form__block-label">
+                          <input class="form__block-input-radio" type="radio" name="delivery-method" required
+                            value="Лично представителем организации" checked>
+                          <div class="form__block-input-text roboto-light">
+                            <span class="roboto-regular">Лично представителем организации</span>
+                          </div>
+                        </label>
+                      </li>
+
+                      <li class="form__block-list-item">
+                        <label class="form__block-label">
+                          <input class="form__block-input-radio" type="radio" name="delivery-method" required
+                            value="Отправка грузом">
+                          <div class="form__block-input-text roboto-light">
+                            <span class="roboto-regular">Отправка грузом</span>
+                          </div>
+                        </label>
+                      </li>
+
+                      <li class="form__block-list-item">
+                        <label class="form__block-label">
+                          <input class="form__block-input-radio" type="radio" name="delivery-method" required
+                            value="Срочная отправка по окончании ремонта">
+                          <div class="form__block-input-text roboto-light">
+                            <span class="roboto-regular">Срочная отправка по окончании ремонта</span>
+                          </div>
+                        </label>
+                      </li>
+                    </ul>
+                  </div>
+
+                  <div class="form__delivery-hidden-items form__block-items">
+                    <div class="form__block-item">
+                      <span class="form__block-name roboto-light">Название транспортной компании*</span>
+
+                      <label class="form__block-label form__block-label--select">
+                        <select class="form__block-select" name="transport-company">
+                          <option disabled>Выберите транспортную компанию</option>
+                          <option>DPD, АО «ДПД РУС»</option>
+                          <option>GTD, ООО Транспортная Компания «КАШАЛОТ»</option>
+                          <option>Major, ООО «Экспресс Курьер»</option>
+                          <option>Pony express, Филиал «Фрейт Линк-Саратов» АО «ФРЕЙТ ЛИНК»</option>
+                          <option>TNT- express, ООО «ПЛЭКСПОСТ»</option>
+                          <option>Возовоз, ООО «Возовоз»</option>
+                          <option>Главдоставка, ООО «ГДИинтернейшенл»</option>
+                          <option>Деловые Линии, ООО «Деловые Линии»</option>
+                          <option>ЖДЭ, ООО «ЖелДорЭкспедиция-58»</option>
+                          <option>КСЭ, ООО «КУРЬЕР СЕРВИС ЭКСПРЕСС»</option>
+                          <option>Мейджик Транс, ООО «Лорд»</option>
+                          <option>СДЭК, ООО «Альфа-Экспресс»</option>
+                          <option>Сити Экспресс, ООО «Сити Рапид»</option>
+                          <option>ЦАП, ООО «ЦАП 2000»</option>
+                          <option>Энергия, ООО «Энергия»</option>
+                        </select>
+                      </label>
+                    </div>
+
+                    <div class="form__block-item">
+                      <span class="form__block-name roboto-light">Адрес терминала*</span>
+
+                      <label class="form__block-label">
+                        <input name="address" class="form__block-input" type="text" placeholder="Адрес терминала">
+                      </label>
+                    </div>
+
+                    <div class="form__block-item">
+                      <span class="form__block-name roboto-light">ИНН получателя*</span>
+
+                      <div class="form__block-label">
+                        <input name="delivery-inn" class="form__block-input form__block-input--inn" type="text"
+                          placeholder="Номер ИНН">
+
+                        <label class="form__block-show-error">
+                          <input type="checkbox" class="form__block-checkbox form__block-checkbox--inn" value="true">
+                          <span class="roboto-regular">Использовать данные из блока "Данные потребителя"</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form__block-item">
+                      <span class="form__block-name roboto-light">Наименование организации*</span>
+
+                      <div class="form__block-label">
+                        <input name="delivery-nameCompany" class="form__block-input" type="text"
+                          placeholder="Наименование организации">
+
+                        <label class="form__block-show-error">
+                          <input type="checkbox"
+                            class="form__block-checkbox form__block-checkbox--delivery-name-company" value="true">
+                          <span class="roboto-regular">Использовать данные из блока "Данные потребителя"</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form__block-item">
+                      <span class="form__block-name roboto-light">Контактный телефон*</span>
+
+                      <div class="form__block-label">
+                        <input name="delivery-phone" class="form__block-input" type="tel"
+                          placeholder="+7 (___) ___ __ __">
+
+                        <label class="form__block-show-error">
+                          <input type="checkbox" class="form__block-checkbox form__block-checkbox--delivery-phone"
+                            value="true">
+                          <span class="roboto-regular">Использовать данные из блока "Данные потребителя"</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div id="block-dataDevices" class="form__block block-dataDevices">
+                <h2 class="form__block-title roboto-light">Данные по рекламационному изделию​</h2>
+
+                <div class="form__block-info">
+                  <div class="form__block-info-item">
+                    <span class="form__block-info-icon"></span>
+                    <span class="form__block-info-text roboto-regular">- на платной основе</span>
+                    <span id="tooltip-1" class="form__block-info-i">
+                      <svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8 0C3.5888 0 0 3.5888 0 8C0 12.4112 3.5888 16 8 16C12.4112 16 16 12.4112 16 8C16 3.5888 12.4112 0 8 0ZM8.8 12H7.2V7.2H8.8V12ZM8.8 5.6H7.2V4H8.8V5.6Z"
+                          fill="#e31f23"></path>
+                      </svg>
+                    </span>
+                  </div>
+
+                  <div class="form__block-info-item">
+                    <span class="form__block-info-icon form__block-info-icon-2"></span>
+                    <span class="form__block-info-text roboto-regular"> - не принимается </span>
+                    <span id="tooltip-2" class="form__block-info-i">
+                      <svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8 0C3.5888 0 0 3.5888 0 8C0 12.4112 3.5888 16 8 16C12.4112 16 16 12.4112 16 8C16 3.5888 12.4112 0 8 0ZM8.8 12H7.2V7.2H8.8V12ZM8.8 5.6H7.2V4H8.8V5.6Z"
+                          fill="#e31f23"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="block-table">
+                  <table id="table-product-data" class="table">
+                    <thead class="table__head roboto-light">
+                      <tr class="table__head-row">
+                        <td class="col"> № </td>
+                        <td class="col-2"> Серийный номер </td>
+                        <td class="col-2"> Наименование </td>
+                        <td class="col-1"> Дата выпуска </td>
+                        <td class="col-1"> Комплектация </td>
+                        <td class="col-2"> Описание неисправности </td>
+                        <td class="col-3"> Пояснение</td>
+                      </tr>
+                    </thead>
+
+                    <tbody class="table__body roboto-regular">
+                      <tr class="table__template-tr">
+                        <td class="col">-</td>
+                        <td class="col-2" data-type="serialNumber">-</td>
+                        <td class="col-2" data-type="deviceNameText">-</td>
+                        <td class="col-1" data-type="dateMaking">-</td>
+                        <td class="col-1 text-ellipsis" data-type="operatingTime">-</td>
+                        <td class="col-2 text-ellipsis" data-type="operatingConditions">-</td>
+                        <td class="col-3 text-ellipsis" data-type="defectDesc">-</td>
+                        <td class="col-2">
+                          <div class="table__btns">
+                            <button data-modal="modal-edit" type="button" class="table__btn table__btn--edit" disabled>
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="32" height="32" rx="4" fill="#e31f23"></rect>
+                                <path
+                                  d="M20 6L23 9L20.713 11.288L17.713 8.288L20 6ZM8 17.988V20.988H11L19.299 12.701L16.299 9.701L8 17.988ZM8 23.988H24V25.988H8V23.988Z"
+                                  fill="white">
+                                </path>
+                              </svg>
+                            </button>
+
+                            <button data-modal="modal-copy" type="button" class="table__btn table__btn--copy" disabled>
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="32" height="32" rx="4" fill="#e31f23"></rect>
+                                <path
+                                  d="M18 12H8C6.897 12 6 12.897 6 14V24C6 25.103 6.897 26 8 26H18C19.103 26 20 25.103 20 24V14C20 12.897 19.103 12 18 12Z"
+                                  fill="white"></path>
+                                <path
+                                  d="M24 6H14C13.4696 6 12.9609 6.21071 12.5858 6.58579C12.2107 6.96086 12 7.46957 12 8V10H20C20.5304 10 21.0391 10.2107 21.4142 10.5858C21.7893 10.9609 22 11.4696 22 12V20H24C24.5304 20 25.0391 19.7893 25.4142 19.4142C25.7893 19.0391 26 18.5304 26 18V8C26 7.46957 25.7893 6.96086 25.4142 6.58579C25.0391 6.21071 24.5304 6 24 6Z"
+                                  fill="white"></path>
+                              </svg>
+                            </button>
+
+                            <button type="button" class="table__btn table__btn--delete" disabled>
+                              <svg width="32" height="32" viewBox="0 0 32 32" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="32" height="32" rx="4" fill="#e31f23"></rect>
+                                <path
+                                  d="M10 11H9V24C9 24.5304 9.21071 25.0391 9.58579 25.4142C9.96086 25.7893 10.4696 26 11 26H21C21.5304 26 22.0391 25.7893 22.4142 25.4142C22.7893 25.0391 23 24.5304 23 24V11H10ZM14 23H12V14H14V23ZM20 23H18V14H20V23ZM20.618 8L19 6H13L11.382 8H7V10H25V8H20.618Z"
+                                  fill="white">
+                                </path>
+                              </svg>
+                            </button>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                  <div class="table-control-btns">
+                    <div class="table-control-btns__lside">
+                      <button type="button" data-modal="modal-act"
+                        class="table-control-btns__btn roboto-medium import-act js-modal-open">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mt-n1"
+                          viewBox="0 0 16 16">
+                          <path
+                            d="M5 4a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8a.5.5 0 0 0 0 1h6a.5.5 0 0 0 0-1H5zm0 2a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1H5z">
+                          </path>
+                          <path
+                            d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm10-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1z">
+                          </path>
+                        </svg>
+
+                        Импортировать из акта
+                      </button>
+
+                      <button type="button" data-modal="modal-excel"
+                        class="table-control-btns__btn roboto-medium import-excel js-modal-open">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="mt-n1"
+                          viewBox="0 0 16 16">
+                          <path
+                            d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V9H3V2a1 1 0 0 1 1-1h5.5v2zM3 12v-2h2v2H3zm0 1h2v2H4a1 1 0 0 1-1-1v-1zm3 2v-2h3v2H6zm4 0v-2h3v1a1 1 0 0 1-1 1h-2zm3-3h-3v-2h3v2zm-7 0v-2h3v2H6z">
+                          </path>
+                        </svg>
+
+                        Импортировать из excel
+                      </button>
+                    </div>
+
+                    <div class="table-control-btns__rside">
+                      <button data-modal="modal-add" type="button"
+                        class="table-control-btns__btn table-control-btns__btn-add roboto-medium js-modal-open">
+                        Добавить
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__block block-textarea">
+                <h2 class="form__block-title roboto-light">ПРИМЕЧАНИЕ</h2>
+
+                <div class="form__block-items">
+                  <div class="form__block-item">
+                    <label class="form__block-label form__block-label--textarea">
+                      <textarea class="form__block-textarea roboto-light" name="note" id="" rows="4"
+                        placeholder="Текст примечания"></textarea>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form__footer">
+                <div class="form__footer-content">
+                  <div class="form__footer-item">
+                    <label>
+                      <input type="checkbox" class="form__footer-checkbox form__block-checkbox" name="is-legal" required
+                        value="true">
+                      <span class="roboto-regular">C <a target="_blank"
+                          href="https://rutektd.ru/services/servis-i-garantiya/​">условиями сервиса и гарантии</a>
+                        ознакомлен.</span>
+                    </label>
+                  </div>
+
+                  <div class="form__footer-item">
+                    <label>
+                      <input type="checkbox" class="form__footer-checkbox form__block-checkbox" name="is-legal" required
+                        value="true">
+                      <span class="roboto-regular">Даю согласие на обработку персональных данных. <br>
+
+                        Ознакомиться с
+                        <a href="#">
+                          политикой конфиденциальности.
+                        </a>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="form__footer-btn-wrapper">
+                    <button type="submit" class="form__footer-btn roboto-medium table-control-btns__btn"
+                      disabled>Сформировать акт</button>
+                  </div>
+
+                  <div class="form-autro roboto-regular">
+                    Если у вас есть какие-то вопросы, ​
+                    обратитесь по <a href="https://rutektd.ru/services/servis-i-garantiya/">контактным данным</a>
+                  </div>
+
+                  <div class="form-autro roboto-regular">
+                    При возникновении проблем с заполнением электронной формы Акта скачайте <a href="#" download="шаблон Акта в формате Word">шаблон Акта в формате Word</a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <div id="modal-add" class="modal">
+        <div class="modal-head">
+          <button type="button" class="modal-close js-modal-close" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-content">
+          <h2 class="modal__title roboto-medium">Добавить оборудование</h2>
+
+          <form id="form-add-device" class="form form-add-device">
+            <div class="form__block">
+              <div class="form__block-items">
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">
+                    Серийный номер*
+                    <span id="tooltip-3" class="form__block-info-i">
+                      <svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8 0C3.5888 0 0 3.5888 0 8C0 12.4112 3.5888 16 8 16C12.4112 16 16 12.4112 16 8C16 3.5888 12.4112 0 8 0ZM8.8 12H7.2V7.2H8.8V12ZM8.8 5.6H7.2V4H8.8V5.6Z"
+                          fill="#e31f23"></path>
+                      </svg>
+                    </span>
+                  </span>
+
+                  <div class="form__block-label">
+                    <input required name="serialNumber" class="form__block-input form__block-input-serialNumber"
+                      type="text" placeholder="Введите серийный номер">
+
+                    <label class="form__block-show-error">
+                      <input type="checkbox" class="form__block-checkbox form__block-checkbox--serialNumber"
+                        value="true">
+                      <span class="roboto-regular">
+                        Серийный номер отсутсвует
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Оборудование*</span>
+
+                  <label class="form__block-label form__block-label--select">
+                    <select class="form__block-select" name="" required>
+                      <option disabled="">Укажите полное наименование изделия</option>
+                      <option>ОПОП 124-7 24В</option>
+                      <option>ОПОП 124-7 12В</option>
+                      <option>Sonar SMPM-100</option>
+                      <option>RV-3NCF2166-I1 (8.0)</option>
+                      <option>Sonar CABLE KIT 18U</option>
+                      <option>Sonar SCS-940</option>
+                      <option>СКОПА-R</option>
+                      <option>МС-2</option>
+                      <option>Турникет-трипод 3V RUBEZH STRAZH Model Y OSDP MF</option>
+                      <option>ИВЭПР 24/3,5 2х7 -Р БР</option>
+                      <option>Турникет-трипод 3V RUBEZH STRAZH Model V OSDP MF</option>
+                      <option>БР 24 2х12</option>
+                      <option>БР 12 2х12</option>
+                      <option>ОТ-1</option>
+                      <option>ОПОП 1-8М</option>
+                      <option>БМП-R2</option>
+                      <option>RV-3NCT5065-I1 (6.0-50)</option>
+                      <option>ИВЭПР 24/3,5 2х12-Р БР</option>
+                      <option>ИВЭПР 24/2,5 2х12-Р БР</option>
+                      <option>RV-3NCT5065-I3 (2.7-13.5)</option>
+                      <option>RV-3BMB2</option>
+                      <option>Базовое основание W2.03</option>
+                      <option>МПО-PFM-R2</option>
+                      <option>АМП-4-R3</option>
+                      <option>РМ-4-R3</option>
+                      <option>АМ-1-R3</option>
+                      <option>РМ-4К-R3</option>
+                      <option>ИП 212-64-R3 W2.02</option>
+                      <option>ИП 212-64-R3 W1.02</option>
+                      <option>ИП 101-29-PR-R3 W1.02</option>
+                      <option>ИП 329 ИОЛИТ-Exd-R</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Дата изготовления*</span>
+
+                  <label class="form__block-label form__block-label--date">
+                    <svg class="input-slot-image" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                        style="mask-type: alpha;">
+                        <path fill="#C4C4C4" d="M0 0h24v24H0z"></path>
+                      </mask>
+                      <g mask="url(#a)" fill="#e31f23">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M14 7h-4v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7H5a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7Zm-7 4h2v2H7v-2Zm2 4H7v2h2v-2Zm2-4h2v2h-2v-2Zm2 4h-2v2h2v-2Zm2-4h2v2h-2v-2Zm2 4h-2v2h2v-2Z">
+                        </path>
+                        <rect x="7" y="4" width="2" height="4" rx="1"></rect>
+                        <rect x="15" y="4" width="2" height="4" rx="1"></rect>
+                      </g>
+                    </svg>
+                    <input id="datepicker" class="form__block-input form__block-input-date" type="text" placeholder=""
+                      required>
+                  </label>
+                </div>
+
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Комплектация*</span>
+
+                  <label class="form__block-label">
+                    <input class="form__block-input" name="equipment" placeholder="Укажите комплектацию" type="text"
+                      required>
+                  </label>
+                </div>
+
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Описание неисправности*</span>
+
+                  <label class="form__block-label">
+                    <input class="form__block-input" name="malfunction" placeholder="Опишите подробно неисправность"
+                      type="text" required>
+                  </label>
+                </div>
+
+                <!-- <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Срок эксплуатации*</span>
+
+                  <label class="form__block-label form__block-label--select">
+                    <select class="form__block-select" name="transport-company" required>
+                      <option>Выбрать срок эксплуатации</option>
+                      <option value="неисправность обнаружена сразу">неисправность обнаружена сразу</option>
+                      <option value="до 1 года">до 1 года</option>
+                      <option value="от 1 до 2 лет">от 1 до 2 лет</option>
+                      <option value="более 2 лет">более 2 лет</option>
+                    </select>
+                  </label>
+                </div> -->
+
+                <!-- <div class="form__block-item form__block-item--top">
+                  <span class="form__block-name form__block-name--mt  roboto-light">Условия эксплуатации*</span>
+
+                  <ul class="form__block-list">
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="terms-use" required=""
+                          value="нормальные">
+                        <div class="form__block-input-text roboto-light">
+                          нормальные
+                        </div>
+                      </label>
+                    </li>
+
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="terms-use" required=""
+                          value="высокая влажность">
+                        <div class="form__block-input-text roboto-light">
+                          высокая влажность
+                        </div>
+                      </label>
+                    </li>
+
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="terms-use" required=""
+                          value="высокая температура">
+                        <div class="form__block-input-text roboto-light">
+                          высокая температура
+                        </div>
+                      </label>
+                    </li>
+
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="terms-use" required=""
+                          value="мелкодисперсная пыль">
+                        <div class="form__block-input-text roboto-light">
+                          мелкодисперсная пыль
+                        </div>
+                      </label>
+                    </li>
+
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="terms-use" required=""
+                          value="свой вариант">
+                        <div class="form__block-input-text roboto-light">
+                          свой вариант
+                        </div>
+                      </label>
+                    </li>
+                  </ul>
+                </div> -->
+
+                <!-- <div class="form__block-item form__block-item--top form__block-item-hidden-textarea">
+                  <div class="form__block-name roboto-light"></div>
+
+                  <label class="form__block-label form__block-label--textarea">
+                    <textarea name="operatingConditionsDesc" class="form__block-textarea roboto-light" name="note" id="" rows="4"
+                      placeholder="Опишите условия эксплуатации"></textarea>
+                  </label>
+                </div> -->
+
+                <div class="form__block-item form__block-item--top">
+                  <div class="form__block-name roboto-light">
+                    Пояснение*
+                    <span id="tooltip-4" class="form__block-info-i">
+                      <svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8 0C3.5888 0 0 3.5888 0 8C0 12.4112 3.5888 16 8 16C12.4112 16 16 12.4112 16 8C16 3.5888 12.4112 0 8 0ZM8.8 12H7.2V7.2H8.8V12ZM8.8 5.6H7.2V4H8.8V5.6Z"
+                          fill="#e31f23"></path>
+                      </svg>
+                    </span>
+                  </div>
+
+                  <label class="form__block-label form__block-label--textarea">
+                    <textarea required class="form__block-textarea roboto-light" name="note" id="" rows="4"
+                      placeholder="Текст пояснения"></textarea>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-submit">
+              <button class="table-control-btns__btn modal-submit__btn">Сохранить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="modal-edit" class="modal">
+        <div class="modal-head">
+          <button type="button" class="modal-close js-modal-close" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-content">
+          <h2 class="modal__title roboto-medium">Редактировать оборудование</h2>
+
+          <form id="form-edit-device" class="form form-add-device">
+            <div class="form__block">
+              <div class="form__block-items">
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">
+                    Серийный номер*
+                    <span id="tooltip-33" class="form__block-info-i">
+                      <svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8 0C3.5888 0 0 3.5888 0 8C0 12.4112 3.5888 16 8 16C12.4112 16 16 12.4112 16 8C16 3.5888 12.4112 0 8 0ZM8.8 12H7.2V7.2H8.8V12ZM8.8 5.6H7.2V4H8.8V5.6Z"
+                          fill="#e31f23"></path>
+                      </svg>
+                    </span>
+                  </span>
+
+                  <div class="form__block-label">
+                    <input required name="serialNumber" class="form__block-input form__block-input-serialNumber2"
+                      type="text" placeholder="Введите серийный номер">
+
+                    <label class="form__block-show-error">
+                      <input type="checkbox" class="form__block-checkbox form__block-checkbox--serialNumber2"
+                        value="true">
+                      <span class="roboto-regular">
+                        Серийный номер отсутсвует
+                      </span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Оборудование*</span>
+
+                  <label class="form__block-label form__block-label--select">
+                    <select class="form__block-select" name="" required>
+                      <option disabled="">Укажите полное наименование изделия</option>
+                      <option>ОПОП 124-7 24В</option>
+                      <option>ОПОП 124-7 12В</option>
+                      <option>Sonar SMPM-100</option>
+                      <option>RV-3NCF2166-I1 (8.0)</option>
+                      <option>Sonar CABLE KIT 18U</option>
+                      <option>Sonar SCS-940</option>
+                      <option>СКОПА-R</option>
+                      <option>МС-2</option>
+                      <option>Турникет-трипод 3V RUBEZH STRAZH Model Y OSDP MF</option>
+                      <option>ИВЭПР 24/3,5 2х7 -Р БР</option>
+                      <option>Турникет-трипод 3V RUBEZH STRAZH Model V OSDP MF</option>
+                      <option>БР 24 2х12</option>
+                      <option>БР 12 2х12</option>
+                      <option>ОТ-1</option>
+                      <option>ОПОП 1-8М</option>
+                      <option>БМП-R2</option>
+                      <option>RV-3NCT5065-I1 (6.0-50)</option>
+                      <option>ИВЭПР 24/3,5 2х12-Р БР</option>
+                      <option>ИВЭПР 24/2,5 2х12-Р БР</option>
+                      <option>RV-3NCT5065-I3 (2.7-13.5)</option>
+                      <option>RV-3BMB2</option>
+                      <option>Базовое основание W2.03</option>
+                      <option>МПО-PFM-R2</option>
+                      <option>АМП-4-R3</option>
+                      <option>РМ-4-R3</option>
+                      <option>АМ-1-R3</option>
+                      <option>РМ-4К-R3</option>
+                      <option>ИП 212-64-R3 W2.02</option>
+                      <option>ИП 212-64-R3 W1.02</option>
+                      <option>ИП 101-29-PR-R3 W1.02</option>
+                      <option>ИП 329 ИОЛИТ-Exd-R</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Дата изготовления*</span>
+
+                  <label class="form__block-label form__block-label--date">
+                    <svg class="input-slot-image" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <mask id="a" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24"
+                        style="mask-type: alpha;">
+                        <path fill="#C4C4C4" d="M0 0h24v24H0z"></path>
+                      </mask>
+                      <g mask="url(#a)" fill="#e31f23">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M14 7h-4v1a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7H5a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-1v1a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1V7Zm-7 4h2v2H7v-2Zm2 4H7v2h2v-2Zm2-4h2v2h-2v-2Zm2 4h-2v2h2v-2Zm2-4h2v2h-2v-2Zm2 4h-2v2h2v-2Z">
+                        </path>
+                        <rect x="7" y="4" width="2" height="4" rx="1"></rect>
+                        <rect x="15" y="4" width="2" height="4" rx="1"></rect>
+                      </g>
+                    </svg>
+                    <input required id="datepicker-edit" class="form__block-input form__block-input-date" type="text"
+                      placeholder="">
+                  </label>
+                </div>
+
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Комплектация*</span>
+
+                  <label class="form__block-label">
+                    <input class="form__block-input" name="equipment" placeholder="Укажите комплектацию" type="text"
+                      required>
+                  </label>
+                </div>
+
+                <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Описание неисправности*</span>
+
+                  <label class="form__block-label">
+                    <input class="form__block-input" name="malfunction" placeholder="Опишите подробно неисправность"
+                      type="text" required>
+                  </label>
+                </div>
+
+                <!-- <div class="form__block-item">
+                  <span class="form__block-name roboto-light">Срок эксплуатации*</span>
+
+                  <label class="form__block-label form__block-label--select">
+                    <select required class="form__block-select" name="transport-company">
+                      <option>Выбрать срок эксплуатации</option>
+                      <option value="неисправность обнаружена сразу">неисправность обнаружена сразу</option>
+                      <option value="до 1 года">до 1 года</option>
+                      <option value="от 1 до 2 лет">от 1 до 2 лет</option>
+                      <option value="более 2 лет">более 2 лет</option>
+                    </select>
+                  </label>
+                </div>
+
+                <div class="form__block-item form__block-item--top">
+                  <span class="form__block-name form__block-name--mt  roboto-light">Условия эксплуатации*</span>
+
+                  <ul class="form__block-list">
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="" required="" value="нормальные">
+                        <div class="form__block-input-text roboto-light">
+                          нормальные
+                        </div>
+                      </label>
+                    </li>
+
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="" required=""
+                          value="высокая влажность">
+                        <div class="form__block-input-text roboto-light">
+                          высокая влажность
+                        </div>
+                      </label>
+                    </li>
+
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="" required=""
+                          value="высокая температура">
+                        <div class="form__block-input-text roboto-light">
+                          высокая температура
+                        </div>
+                      </label>
+                    </li>
+
+                    <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="" required=""
+                          value="мелкодисперсная пыль">
+                        <div class="form__block-input-text roboto-light">
+                          мелкодисперсная пыль
+                        </div>
+                      </label>
+                    </li>
+
+                    <!-- <li class="form__block-list-item">
+                      <label class="form__block-label">
+                        <input class="form__block-input-radio" type="radio" name="" required=""
+                          value="свой вариант">
+                        <div class="form__block-input-text roboto-light">
+                          свой вариант
+                        </div>
+                      </label>
+                    </li>
+                  </ul>
+                </div> -->
+
+                <div class="form__block-item form__block-item--top">
+                  <div class="form__block-name roboto-light">
+                    Пояснение*
+                    <span id="tooltip-44" class="form__block-info-i">
+                      <svg class="" width="16" height="16" viewBox="0 0 16 16" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M8 0C3.5888 0 0 3.5888 0 8C0 12.4112 3.5888 16 8 16C12.4112 16 16 12.4112 16 8C16 3.5888 12.4112 0 8 0ZM8.8 12H7.2V7.2H8.8V12ZM8.8 5.6H7.2V4H8.8V5.6Z"
+                          fill="#e31f23"></path>
+                      </svg>
+                    </span>
+                  </div>
+
+                  <label class="form__block-label form__block-label--textarea">
+                    <textarea required class="form__block-textarea roboto-light" name="note" id="" rows="4"
+                      placeholder="Текст пояснения"></textarea>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-submit">
+              <button class="table-control-btns__btn modal-submit__btn modal-submit__btn--edit">Сохранить</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="modal-act" class="modal">
+        <div class="modal-head">
+          <button type="button" class="modal-close js-modal-close" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-content">
+          <h2 class="modal__title roboto-medium">Импорт строк из акта</h2>
+          <p class="modal__text roboto-regular">
+            Введите 16-значный код акта рекламации, из которого хотите подгрузить данные по изделиям.
+          </p>
+
+          <form id="form-act">
+            <input required class="form__block-input form-act__input" type="text"
+              placeholder="16-значный код акта (пример: 1234-ab12-34c5-67d8)">
+
+            <button class="form-act__btn roboto-medium">Импортировать</button>
+          </form>
+        </div>
+      </div>
+
+      <div id="modal-excel" class="modal">
+        <div class="modal-head">
+          <button type="button" class="modal-close js-modal-close" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-content">
+          <h2 class="modal__title roboto-medium">Импорт из excel файла</h2>
+
+          <div class="modal__warning">
+            <div class="modal__warning-lside">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 60 60" width="60" height="60"
+                class="ico-old-product">
+                <circle cx="30" cy="30" r="29" stroke="#17589E" stroke-width="2"></circle>
+                <path fill="#17589E"
+                  d="m32.48 10-.357 28.474h-4.575L27.164 10h5.316ZM27 47.139c0-.818.247-1.508.74-2.07.511-.564 1.26-.846 2.246-.846.968 0 1.708.282 2.22.845.53.563.794 1.254.794 2.071a2.84 2.84 0 0 1-.794 2.016c-.512.563-1.252.845-2.22.845-.986 0-1.735-.282-2.246-.845-.493-.563-.74-1.235-.74-2.016Z">
+                </path>
+              </svg>
+            </div>
+
+            <div class="modal__warning-rside">
+              <h5> Вы можете загрузить данные по рекламации из файла в формате xlsx. </h5>
+
+              <div class="small-text roboto-light">
+                <div style="margin-bottom: 0.5rem">Загружаемый файл должен содержать следующие столбцы:</div>
+                <ul>
+                  <li style="margin-bottom: 0.5rem"><b>Серийный номер</b> - в случае, если у вашего изделия отсутствует
+                    серийный номер, введите цифру
+                    <code class="text-dark fs-6">0</code>.
+                  </li>
+                  <li style="margin-bottom: 0.5rem"><b>Код RBZ</b> - артикул товара</li>
+                  <li style="margin-bottom: 0.5rem"><b>Наименование номенклатуры</b> - укажите полное наименование
+                    изделия</li>
+                  <li style="margin-bottom: 0.5rem"><b>Дата изготовления</b> - в формате месяц.год (пример:
+                    <code>02.2022</code>)
+                  </li>
+                  <li style="margin-bottom: 0.5rem"><b>Срок эксплуатации</b> - возможные значения: неисправность
+                    обнаружена сразу, до 1 года, от 1 до
+                    2 лет, более 2 лет.</li>
+                  <li style="margin-bottom: 0.5rem"><b>Условия эксплуатации</b> - возможные значения: нормальные,
+                    высокая влажность, высокая
+                    температура, мелкодисперсная пыль, свой вариант.</li>
+                  <li style="margin-bottom: 0.5rem"><b>Описание неисправности</b> - опишите выявленную неисправность
+                    максимально подробно</li>
+                </ul>
+                <br>
+                <hr>
+                <br>
+                <div> Пример файла: <a href="./files/import-reclamation-example.xlsx"
+                    download="Пример импорта рекламаций" target="_blank"> скачать </a></div>
+              </div>
+            </div>
+          </div>
+
+          <form id="form-excel" class="form-excel">
+            <div class="form-excel__content">
+              <label for="file-excel-input" class="form-label roboto-regular">Файл импорта:</label>
+              <input required id="file-excel-input" class="form-control" type="file"
+                accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet">
+            </div>
+
+            <!--<div class="table-responsive overflow-y-auto" style="max-height: 300px;">
+              <table class="table table-striped table-bordered">
+                <thead class="position-sticky top-0 bg-white">
+                  <tr>
+                    <th>#</th>
+                    <th>Серийный номер</th>
+                    <th>Код RBZ</th>
+                    <th>Наименование номенклатуры</th>
+                    <th>Дата изготовления</th>
+                    <th>Срок эксплуатации</th>
+                    <th>Условия эксплуатации</th>
+                    <th>Описание неисправности</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="">
+                    <td>1</td>
+                    <td>000000000</td>
+                    <td>RBZ-290389</td>
+                    <td>Контроллер STR20-2AP-IP-М</td>
+                    <td>12.2020</td>
+                    <td>до 1 года</td>
+                    <td>свой вариант</td>
+                    <td>Пример описания неисправности</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <div class="text-end roboto-regular">
+              Количество элементов подготовленных к импорту: <b>1</b><br><br>
+              Количество элементов с ошибками: <b>0</b>
+            </div> -->
+
+            <div class="button-wrapper">
+              <button class="form-excel__btn roboto-medium">Импортировать</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div id="modal-success" class="modal">
+        <div class="modal-head">
+          <button type="button" class="modal-close js-modal-close" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-content">
+          <h2 class="modal__title roboto-medium">Акт рекламации успешно сформирован.</h2>
+          <p>
+            Заполненный акт рекламации был отправлен на указанную Вами почту. <br>
+            Распечатайте Акт, подпишите и приложите к грузу перед отправкой согласно <a href="">условиям сервиса и гарантии.</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="modal-background"></div>
+    </main>
+    @include('partials/footer.html')
+    <!-- @include('html/h1.html') пример include -->
+  </div>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="http://cdn.jsdelivr.net/npm/suggestions-jquery@22.6.0/dist/css/suggestions.min.css" rel="stylesheet" />
+  <script src="http://cdn.jsdelivr.net/npm/suggestions-jquery@22.6.0/dist/js/jquery.suggestions.min.js"></script>
+
+
+
+  <!-- Production -->
+  <script src="https://unpkg.com/@popperjs/core@2"></script>
+  <script src="https://unpkg.com/tippy.js@6"></script>
+
+
+
+
+
+
+
+</body>
+
+</html>
